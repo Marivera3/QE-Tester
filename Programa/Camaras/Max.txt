@@ -1,0 +1,6 @@
+------------------------------------------------------------
+Nombre de la camara: Max
+Area pixel: 12
+Ganancia de conversion:
+Cantidad de mediciones: 50
+Path de las fotos: C:\\Users\\maxri\\Documents\\UC\\Ipre\\QE tester\\Programa\\Camaras

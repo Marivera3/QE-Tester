@@ -1,0 +1,4 @@
+------------------------------------------------------------
+Nombre de la camara: cx12
+Area pixel: 12
+Ganancia de conversion: 59.9

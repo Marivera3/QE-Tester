@@ -1,0 +1,9 @@
+------------------------------------------------------------
+Nombre de la camara: c3po
+Area pixel: 12.9
+Ganancia de conversion: 59.1
+Cantidad de mediciones: 59.1
+Path de las fotos: C:\\Users\\maxri\\Documents\\UC\\Ipre\\QE tester\\Programa\\Camaras
+------------------------------------------------------------
+Cantidad de mediciones: 12
+Path de las fotos: C:\\Users\\maxri\\Documents\\UC\\Ipre\\QE tester\\Programa\\Camaras

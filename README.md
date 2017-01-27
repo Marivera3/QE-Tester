@@ -1,2 +1,2 @@
 # QE-Tester
-Investigación de pregrado sobre la construccion de un QE Tester
+Investigación de pregrado sobre la construcción de un QE Tester

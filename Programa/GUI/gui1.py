@@ -1,5 +1,5 @@
 """GUI"""
-"""juvenega@uc.cl"""
+__author__ = "Maximiliano Rivera"
 
 import os
 import sys

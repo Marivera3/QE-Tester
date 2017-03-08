@@ -7,9 +7,11 @@ from PyQt4 import QtCore, QtGui, uic
 from PyQt4.QtGui import QLabel, QPixmap, QWidget, QPalette
 from PyQt4.QtGui import QPen, QBrush,  QApplication, QDialog, QGraphicsView, QGraphicsScene, QGridLayout, QPushButton
 from PyQt4.QtCore import QPointF, QRectF, Qt
+from graph_test import MainWindow
 import parser_cam
 
-PATH_CAMARAS = "C:\\Users\\maxri\\Documents\\UC\\Ipre\\QE tester\\Programa\\Camaras"
+# Path en donde se guardará la info de las cámaras y en donde se leerá.
+PATH_CAMARAS = "C:\\Users\\maxri\\Documents\\UC\\Ipre\\QE tester1\\Programa\\Camaras"
 
 
 def get_path_camara(path=PATH_CAMARAS):
@@ -33,6 +35,7 @@ datos_ingreso_error = uic.loadUiType(
     get_absolute_path("ui\datos_ingreso_error.ui"))
 datos_mediciones_error = uic.loadUiType(
     get_absolute_path("ui\datos_med_error.ui"))
+info_datos = uic.loadUiType(get_absolute_path("ui\info_datos.ui"))
 
 
 class GUI:
@@ -43,6 +46,8 @@ class GUI:
         self.datos_mediciones = DatosMediciones()
         self.datos_ingreso_error = DatosIngresoError()
         self.datos_mediciones_error = DatosMedicionesError()
+        self.info_datos = InfoDatos()
+        self.mywindow = MyWindow(self.menu_ingreso)
 
         self.menu_ingreso.show()
 
@@ -86,6 +91,12 @@ class GUI:
         self.datos_mediciones.volver.clicked.connect(
             self.__on_datos_mediciones_volver_button_click)
 
+        self.info_datos.continue_button.clicked.connect(
+            self.__on_info_datos_continue_button_click)
+
+        self.info_datos.back_button.clicked.connect(
+            self.__on_info_datos_back_button_click)
+
     def __on_menu_ingreso_continuar_button_click(self):
         self.__toggle_windows(self.datos_ingreso, self.menu_ingreso)
 
@@ -93,11 +104,11 @@ class GUI:
         # Actualiza los datos
         self.camera_name = self.datos_ingreso.nombre_camara
         # self.datos_ingreso.area_camara
-        print(self.datos_ingreso.ganancia_camara)
 
         # Verifica el usuario
         if parser_cam.hay_camara(self.datos_ingreso.nombre_camara, self.cameras):
             self.hay_camara = True
+
             """
 
             FALTA MODIFICAR LA LECTURA DE LAS CAMARAS
@@ -122,6 +133,7 @@ class GUI:
             else:
                 self.datos_ingreso_error.exec_()
 
+
     def __on_datos_ingreso_volver_button_click(self):
         if self.datos_ingreso.nombre_camara or self.datos_ingreso.area_camara or self.datos_ingreso.ganancia_camara:
             self.datos_ingreso.datos_a_blanco()
@@ -132,22 +144,38 @@ class GUI:
         if self.datos_mediciones.mediciones.isdigit() and path_exist(self.datos_mediciones.path):
             if self.hay_camara:
                 parser_cam.nueva_seccion_camara(
-                    PATH_CAMARAS, self.camera_name, self.datos_mediciones.mediciones, self.datos_mediciones.path)
+                    PATH_CAMARAS, self.camera_name, self.datos_mediciones.mediciones,
+                    self.datos_mediciones.path, ganancia=self.datos_ingreso.ganancia_camara,
+                    area_pixel=self.datos_ingreso.area_camara)
             else:
                 parser_cam.agregar_mediciones_old(
                     PATH_CAMARAS, self.camera_name, self.datos_mediciones.mediciones, self.datos_mediciones.path)
-            # self.__toggle_windows(self.menu_ingreso, self.datos_mediciones)
+            self.__toggle_windows(self.info_datos, self.datos_mediciones)
         else:
             self.datos_mediciones_error.exec_()
 
     def __on_datos_mediciones_volver_button_click(self):
         if self.datos_ingreso.nombre_camara or self.datos_ingreso.area_camara or self.datos_ingreso.ganancia_camara:
             self.datos_ingreso.datos_a_blanco()
+            self.camera_name = None
 
         if self.datos_mediciones.mediciones or self.datos_mediciones.path:
             self.datos_mediciones.datos_a_blanco()
 
         self.__toggle_windows(self.datos_ingreso, self.datos_mediciones)
+
+    def __on_info_datos_continue_button_click(self):
+        dic = parser_cam.leer_camara(PATH_CAMARAS, self.camera_name)
+
+        self.mywindow.dic = dic
+        self.mywindow.convertiongain()
+        self.__toggle_windows(self.mywindow, self.info_datos)
+        self.datos_ingreso.datos_a_blanco()
+        self.datos_mediciones.datos_a_blanco()
+
+    def __on_info_datos_back_button_click(self):
+        self.datos_mediciones.datos_a_blanco()
+        self.__toggle_windows(self.datos_mediciones, self.info_datos)
 
     def __toggle_windows(self, incoming, outgoing):
         outgoing.close()
@@ -161,7 +189,6 @@ class MenuIngreso(*menu_ingreso_ui):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-
         self.setWindowTitle('QE Tester')
 
         # Boton Salir
@@ -264,6 +291,41 @@ class DatosMedicionesError(*datos_mediciones_error):
 
     def aun_no(self):
         self.hide()
+
+
+class InfoDatos(*info_datos):
+
+    def __init__(self):
+        super().__init__()
+        self.setupUi(self)
+
+        self.setWindowTitle('QE Tester')
+
+
+class MyWindow(MainWindow):
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self._dic = None
+
+    @property
+    def dic(self):
+        return self._dic
+
+    @dic.setter
+    def dic(self, value):
+        self._dic = value
+
+    def convertiongain(self):
+        if self._dic["ganancia"]:
+            self.texto.append(
+                "Ganancia de conversion: {0}".format(self._dic["ganancia"]))
+        else:
+            self.texto.append("""No hay ganancia de conversion. Para encontrarla \
+es necesario tomar 6 fotos con distinto tiempo de exposición pero con misma \
+longitud de onda. Al tomar la foto se tiene que introducir el nombre y el tiempo \
+de exposición donde corresponda.""")
+
 
 if __name__ == '__main__':
 

@@ -1,11 +1,13 @@
 def hay_camara(nombre, directorio):
-    for cam in directorio:
-        cam = cam.split(".")
-        cam = cam[:-1]
-        cam = ".".join(cam)
-        if nombre in cam:
-            return True
-    return False
+    if nombre:
+        for cam in directorio:
+            cam = cam.split(".")
+            cam = cam[:-1]
+            cam = ".".join(cam)
+            if nombre in cam:
+                return True
+    else:
+        return False
 
 
 def crear_camara(path, nombre, area_pixel, ganancia=None):
@@ -21,9 +23,13 @@ def agregar_mediciones_old(path, nombre, mediciones, path_fotos):
             mediciones, path_fotos))
 
 
-def nueva_seccion_camara(path, nombre, mediciones, path_fotos):
+def nueva_seccion_camara(path, nombre, mediciones, path_fotos, ganancia=None, area_pixel=None):
     with open(path + "/" + nombre + ".txt", "a") as arch:
         arch.write("---" * 20 + "\n")
+        if bool(area_pixel):
+            arch.write("Area pixel: {0}\n".format(area_pixel))
+        if bool(ganancia):
+            arch.write("Ganancia de conversion: {0}\n".format(ganancia))
         arch.write("Cantidad de mediciones: {0}\nPath de las fotos: {1}\n".format(
             mediciones, path_fotos))
 
@@ -52,5 +58,6 @@ def isfloat(element):
     else:
         return True
 
-print(leer_camara(
-    "C:\\Users\\maxri\\Documents\\UC\\Ipre\\QE tester\\Programa\\Camaras", "Max"))
+if __name__ == '__main__':
+    print(leer_camara(
+        "C:\\Users\\maxri\\Documents\\UC\\Ipre\\QE tester1\\Programa\\Camaras", "Max"))

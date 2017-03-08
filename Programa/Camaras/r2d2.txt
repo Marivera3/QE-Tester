@@ -1,0 +1,47 @@
+------------------------------------------------------------
+Nombre de la camara: r2d2
+Area pixel: 65
+Ganancia de conversion: 
+Cantidad de mediciones: 50
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
+------------------------------------------------------------
+Area pixel: 65
+Cantidad de mediciones: 44
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
+------------------------------------------------------------
+Area pixel: 70
+Cantidad de mediciones: 12
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
+------------------------------------------------------------
+Cantidad de mediciones: 1
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
+------------------------------------------------------------
+Cantidad de mediciones: 3
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
+------------------------------------------------------------
+Cantidad de mediciones: 55
+Path de las fotos: C:\Users\maxri\Documents\My Books
+------------------------------------------------------------
+Cantidad de mediciones: 32
+Path de las fotos: C:\Users\maxri\Documents\My Books
+------------------------------------------------------------
+Cantidad de mediciones: 44
+Path de las fotos: C:\Users\maxri\Documents\My Books
+------------------------------------------------------------
+Cantidad de mediciones: 30
+Path de las fotos: C:\Users\maxri\Documents\My Books
+------------------------------------------------------------
+Cantidad de mediciones: 345
+Path de las fotos: C:\Users\maxri\Documents\My Books
+------------------------------------------------------------
+Cantidad de mediciones: 1
+Path de las fotos: C:\Users\maxri\Documents\My Books
+------------------------------------------------------------
+Cantidad de mediciones: 4
+Path de las fotos: C:\Users\maxri\Documents\UC\2016-2\Progra Avanzada\Syllabus\Material de Clases\01-OOP
+------------------------------------------------------------
+Cantidad de mediciones: 41
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1
+------------------------------------------------------------
+Cantidad de mediciones: 45
+Path de las fotos: C:\Users\maxri\Documents

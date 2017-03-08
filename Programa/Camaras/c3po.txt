@@ -7,3 +7,63 @@ Path de las fotos: C:\\Users\\maxri\\Documents\\UC\\Ipre\\QE tester\\Programa\\C
 ------------------------------------------------------------
 Cantidad de mediciones: 12
 Path de las fotos: C:\\Users\\maxri\\Documents\\UC\\Ipre\\QE tester\\Programa\\Camaras
+------------------------------------------------------------
+Cantidad de mediciones: 100
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+------------------------------------------------------------
+Cantidad de mediciones: 20
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+------------------------------------------------------------
+Cantidad de mediciones: 20
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+------------------------------------------------------------
+Cantidad de mediciones: 30
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+------------------------------------------------------------
+Cantidad de mediciones: 34
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+------------------------------------------------------------
+Cantidad de mediciones: 44
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+Ganancia de conversion: 15
+------------------------------------------------------------
+Cantidad de mediciones: 66
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+Ganancia de conversion: 14
+------------------------------------------------------------
+Cantidad de mediciones: 77
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+------------------------------------------------------------
+Cantidad de mediciones: 33
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+Ganancia de conversion: 44
+------------------------------------------------------------
+Cantidad de mediciones: 56
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\Camaras
+------------------------------------------------------------
+Cantidad de mediciones: 25
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa
+------------------------------------------------------------
+Cantidad de mediciones: 20
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Stepper
+------------------------------------------------------------
+Cantidad de mediciones: 20
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Stepper
+------------------------------------------------------------
+Cantidad de mediciones: 20
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Stepper
+------------------------------------------------------------
+Cantidad de mediciones: 30
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
+------------------------------------------------------------
+Cantidad de mediciones: 30
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
+------------------------------------------------------------
+Cantidad de mediciones: 30
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
+------------------------------------------------------------
+Cantidad de mediciones: 40
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
+------------------------------------------------------------
+Cantidad de mediciones: 55
+Path de las fotos: C:\Users\maxri\Documents\UC\Ipre\QE tester1\Programa\GUI
